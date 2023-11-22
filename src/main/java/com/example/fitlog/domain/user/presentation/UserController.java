@@ -5,7 +5,7 @@ import com.example.fitlog.domain.user.presentation.dto.request.SignInRequest;
 import com.example.fitlog.domain.user.presentation.dto.request.UserSignUpRequest;
 import com.example.fitlog.domain.user.presentation.dto.response.QueryUserInfoResponse;
 import com.example.fitlog.domain.user.service.QueryMyInfoService;
-import com.example.fitlog.domain.user.service.SignInService;
+import com.example.fitlog.domain.auth.service.SignInService;
 import com.example.fitlog.domain.user.service.UserSignUpService;
 import com.example.fitlog.domain.user.service.UserWithdrawalService;
 import jakarta.validation.Valid;
