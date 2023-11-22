@@ -7,6 +7,7 @@ import com.example.fitlog.domain.user.presentation.dto.response.QueryUserInfoRes
 import com.example.fitlog.domain.user.service.QueryMyInfoService;
 import com.example.fitlog.domain.user.service.SignInService;
 import com.example.fitlog.domain.user.service.UserSignUpService;
+import com.example.fitlog.domain.user.service.UserWithdrawalService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -20,6 +21,7 @@ public class UserController {
     private final UserSignUpService userSignUpService;
     private final QueryMyInfoService queryMyInfoService;
     private final SignInService signInService;
+    private final UserWithdrawalService userWithdrawalService;
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/signup")
@@ -35,5 +37,11 @@ public class UserController {
     @GetMapping
     public QueryUserInfoResponse getMyInfo() {
         return queryMyInfoService.getMyInfo();
+    }
+
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @DeleteMapping
+    public void deleteUser() {
+        userWithdrawalService.deleteUser();
     }
 }
