@@ -1,4 +1,4 @@
-package com.example.fitlog.domain.user.service;
+package com.example.fitlog.domain.auth.service;
 
 import com.example.fitlog.domain.auth.presentation.dto.response.TokenResponse;
 import com.example.fitlog.domain.user.domain.User;
