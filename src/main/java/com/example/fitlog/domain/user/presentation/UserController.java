@@ -1,11 +1,13 @@
 package com.example.fitlog.domain.user.presentation;
 
 import com.example.fitlog.domain.auth.presentation.dto.response.TokenResponse;
+import com.example.fitlog.domain.auth.service.SignInService;
 import com.example.fitlog.domain.user.presentation.dto.request.SignInRequest;
+import com.example.fitlog.domain.user.presentation.dto.request.UpdateUserInfoRequest;
 import com.example.fitlog.domain.user.presentation.dto.request.UserSignUpRequest;
 import com.example.fitlog.domain.user.presentation.dto.response.QueryUserInfoResponse;
 import com.example.fitlog.domain.user.service.QueryMyInfoService;
-import com.example.fitlog.domain.auth.service.SignInService;
+import com.example.fitlog.domain.user.service.UpdateUserInfoService;
 import com.example.fitlog.domain.user.service.UserSignUpService;
 import com.example.fitlog.domain.user.service.UserWithdrawalService;
 import jakarta.validation.Valid;
@@ -22,6 +24,8 @@ public class UserController {
     private final QueryMyInfoService queryMyInfoService;
     private final SignInService signInService;
     private final UserWithdrawalService userWithdrawalService;
+    private final UpdateUserInfoService updateUserInfoService;
+
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/signup")
@@ -32,6 +36,12 @@ public class UserController {
     @PostMapping("/token")
     public TokenResponse signIn(@RequestBody @Valid SignInRequest request) {
         return signInService.signIn(request);
+    }
+
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @PatchMapping
+    public void modifyInfo(@RequestBody @Valid UpdateUserInfoRequest request) {
+        updateUserInfoService.modifyInfo(request);
     }
 
     @GetMapping
