@@ -12,4 +12,6 @@ public class UpdateUserInfoRequest {
     private Double weight;
 
     private Double height;
+
+    private int age;
 }
