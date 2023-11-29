@@ -62,4 +62,10 @@ public class User {
         this.height = height;
         this.gender = gender;
     }
+
+    public void modifyInfo(Double weight, Double height, int age) {
+        this.weight = weight;
+        this.height = height;
+        this.age = age;
+    }
 }
