@@ -18,14 +18,9 @@ public class QueryMyInfoService {
         User user = userFacade.getCurrentUser();
 
         return QueryUserInfoResponse.builder()
-                .name(user.getName())
                 .age(user.getAge())
-                .year(user.getYear())
-                .month(user.getMonth())
-                .day(user.getDay())
                 .weight(user.getWeight())
                 .height(user.getHeight())
-                .gender(user.getGender())
                 .build();
     }
 }
