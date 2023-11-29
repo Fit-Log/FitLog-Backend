@@ -26,7 +26,6 @@ public class UserController {
     private final UserWithdrawalService userWithdrawalService;
     private final UpdateUserInfoService updateUserInfoService;
 
-
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/signup")
     public void signUp(@RequestBody @Valid UserSignUpRequest request) {
