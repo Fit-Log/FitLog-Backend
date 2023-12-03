@@ -8,12 +8,7 @@ import lombok.Getter;
 @Builder
 public class QueryUserInfoResponse {
 
-    private final String name;
     private final int age;
-    private final int year;
-    private final int month;
-    private final int day;
     private final Double weight;
     private final Double height;
-    private final Gender gender;
 }
